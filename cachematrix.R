@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions enable the creation of a matrix and 
+## computation of its inverse, caching the inverse to save
+## computational time in repetitive tasks
 
-## Write a short comment describing this function
+## makeCacheMatrix creates and returns a list containing
+## functions to set and retrieve both a matrix object's value
+## and its inverse using a 'caching' mechanism
 
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
@@ -10,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 i <<- NULL
         }
         get <- function() x
-        setinverse <- function(solve) i <<- mean
+        setinverse <- function(solve) i <<- solve
         getinverse <- function() i
         list(set = set, get = get,
              setinverse = setinverse,
